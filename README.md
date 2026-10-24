@@ -80,3 +80,83 @@ The current test suite covers CRUD operations and error handling for nonexistent
 **Version 1.0 — Functional Full-Stack CRUD Application**
 
 This project was developed as part of my hands-on training in full-stack software development, with a focus on building REST APIs, integrating databases, writing automated tests, and developing responsive user interfaces.
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following tools installed:
+
+- Node.js
+- pnpm
+- Docker Desktop
+- Git
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd TaskFlow
+```
+
+Replace `<repository-url>` with the HTTPS URL of this repository.
+
+### 2. Configure PostgreSQL
+
+Create a `.env` file in the project root using `.env.example` as a template.
+
+Set `POSTGRES_PASSWORD` to a password of your choice.
+
+Start the PostgreSQL container:
+
+```bash
+docker compose up -d
+```
+
+### 3. Set up the backend
+
+Open a terminal in the `backend` directory:
+
+```bash
+cd backend
+pnpm install
+```
+
+Create a `.env` file using `backend/.env.example` as a template.
+
+Update `DATABASE_URL` with the PostgreSQL credentials configured in the previous step.
+
+Run the database migrations and generate Prisma Client:
+
+```bash
+pnpm exec prisma migrate deploy
+pnpm exec prisma generate
+```
+
+Start the API:
+
+```bash
+pnpm start:dev
+```
+
+The backend runs at `http://localhost:3000`.
+
+### 4. Start the frontend
+
+Open another terminal in the `frontend` directory:
+
+```bash
+cd frontend
+pnpm install
+pnpm dev
+```
+
+Open `http://localhost:5173` in your browser.
+
+### 5. Run the tests
+
+From the `backend` directory:
+
+```bash
+pnpm exec vitest run
+```
