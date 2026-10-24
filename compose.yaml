@@ -5,7 +5,7 @@ services:
     restart: "no"
     environment:
       POSTGRES_USER: taskflow
-      POSTGRES_PASSWORD: taskflow_dev_123
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Define POSTGRES_PASSWORD en el archivo .env}
       POSTGRES_DB: taskflow_db
     ports:
       - "127.0.0.1:5432:5432"
