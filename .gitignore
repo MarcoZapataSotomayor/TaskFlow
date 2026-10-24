@@ -1,0 +1,38 @@
+# Dependencias
+node_modules/
+**/node_modules/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Archivos compilados
+dist/
+**/dist/
+
+# Archivos temporales
+*.log
+
+# Editor y sistema operativo
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Cobertura de pruebas
+coverage/
+
+# Generated Prisma Client
+backend/src/generated/prisma/
+
+# Prisma generated client
+backend/src/generated/prisma/
+
+# Generated AI assistant resources
+backend/.agents/
+backend/.claude/
+backend/.windsurf/
+backend/skills-lock.json
+
+# TypeScript build cache
+*.tsbuildinfo

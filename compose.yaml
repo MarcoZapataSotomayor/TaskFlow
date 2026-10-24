@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:18
+    container_name: taskflow-postgres
+    restart: "no"
+    environment:
+      POSTGRES_USER: taskflow
+      POSTGRES_PASSWORD: taskflow_dev_123
+      POSTGRES_DB: taskflow_db
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+
+volumes:
+  postgres_data:
